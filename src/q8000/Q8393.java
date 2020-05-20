@@ -1,4 +1,4 @@
-package quiz;
+package q8000;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package quiz;
+package q1000;
 
 import java.util.Arrays;
 import java.util.Scanner;
