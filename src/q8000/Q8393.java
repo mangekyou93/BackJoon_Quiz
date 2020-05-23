@@ -10,10 +10,11 @@ public class Q8393 {
 	//출력
 	//1부터 n까지 합을 출력한다.
 	
+	//백준 문제 8393 : 합
 	public static void main(String[] args) {
 		
 		int n = 0;
-		long result = 0;
+		long result = 0;								// int로 해도 상관업음 21억이 안넘어감
 		Scanner sc = new Scanner(System.in);
 		
 		n = sc.nextInt();
