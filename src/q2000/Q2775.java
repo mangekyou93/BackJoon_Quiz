@@ -17,9 +17,18 @@ public class Q2775 {
 	// 3) 재귀함수를 통해 
 	
 	// 2차원 배열 / 재귀함수 공부하자.
-	public static void main(String[] args) throws Exception {
-		
+	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			testCase1(br);
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	static void testCase1(BufferedReader br) throws Exception {
 		StringBuilder sb = new StringBuilder();
 		int t = Integer.parseInt(br.readLine());
 		int[][] arr = new int[15][15];				//0층부터 14층까지이므로 15개
@@ -41,7 +50,6 @@ public class Q2775 {
 			sb.append(arr[k][n-1]+"\n");
 		}
 		System.out.println(sb);
-		
 	}
 
 }
