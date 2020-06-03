@@ -23,6 +23,7 @@ public class Q1712 {
 		} else {
 			count = a / (c - b) + 1;
 			/*
+			//반복문은 시간이 더 소요된다
 			//이거는 0.35초가 초과된다... 그래서 실패가 떳던거구나....
 			while(cost > 0) {
 				cost = cost + b - c;
