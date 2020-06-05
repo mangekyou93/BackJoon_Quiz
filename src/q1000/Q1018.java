@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 public class Q1018 {
 
 	//백준 문제 1018 : 체스판 다시 칠하기
+	//브루트포스 문제
 	static boolean[][] arr;
 	static int min = 64;
 	
