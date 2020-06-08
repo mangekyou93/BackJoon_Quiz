@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.StringTokenizer;
 
-public class Q11650 {
+public class Q11651 {
 
-	//백준 문제 11650 : 좌표 정렬하기
-	//메모리 : 58MB / 시간 : 0.564 s
+	//백준 문제 11651 : 좌표 정렬하기 2
+	//메모리 : 59MB / 시간 : 0.576 s
 	public static void main(String[] args) throws Exception{
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,11 +31,11 @@ public class Q11650 {
 			@Override
 			public int compare(int[] o1, int[] o2) {
 				
-				if(o1[0] == o2[0]) {
-					return Integer.compare(o1[1], o2[1]);
+				if(o1[1] == o2[1]) {							// y좌표가 서로 같을 경우
+					return Integer.compare(o1[0], o2[0]);		// x좌표를 비교한다.
 				}
 				
-				return Integer.compare(o1[0], o2[0]);
+				return Integer.compare(o1[1], o2[1]);			// y좌표가 서로 다를 경우
 			}
 		});
 		
