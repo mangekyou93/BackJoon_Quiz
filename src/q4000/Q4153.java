@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 public class Q4153 {
 
 	//백준 문제 4153 : 직각삼각형
+	//분류 : 구현
 	public static void main(String[] args) throws Exception {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
