@@ -1,27 +1,45 @@
 package q1000;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader; 
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Q1912 {
-
-	//완전 탐색(Brute-force Search, 브루트포스)
-	//절대 틀릴 일은 없는 강력한 방식이지만, 당연히 시간은 최대로 들어갑니다.
 	
-	//문제
-	//n개의 정수로 이루어진 임의의 수열이 주어진다. 우리는 이 중 연속된 몇 개의 수를 선택해서 구할 수 있는 합 중 가장 큰 합을 구하려고 한다. 단, 수는 한 개 이상 선택해야 한다.
-	//예를 들어서 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 이라는 수열이 주어졌다고 하자. 여기서 정답은 12+21인 33이 정답이 된다.
+	//백준 문제 1912 : 연속합
+	//분류 : 다이나믹 프로그래밍
+	//메모리 : 24MB / 시간 : 0.184 s
 	
-	//입력
-	//첫째 줄에 정수 n(1 ≤ n ≤ 100,000)이 주어지고 
-	//둘째 줄에는 n개의 정수로 이루어진 수열이 주어진다. 수는 -1,000보다 크거나 같고, 1,000보다 작거나 같은 정수이다.
-
-	//출력
-	//첫째 줄에 답을 출력한다.
-	
-	public static void main(String[] args) {
+	//첫 번째는 시간 초과가 나옴
+	//1 <= N <= 100,000
+	//O(N^2)이라서 1초를 넘어가나 봄
+	public static void main(String[] args) throws Exception{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		int[] arr = new int[n];
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		for(int i=0 ; i<n ; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		//다이나믹 프로그래밍의 예시...
+		//사실 이 연속합은 완전탐색으로 하기에는 O(N^2)이라서 시간이 부족하고,
+		//다이나믹 프로그래밍으로 푸는 것이 O(N)이 나와서 1초 미만으로 나온다.
+		int[] dp = new int[n];
+		dp[0] = arr[0];
+		int max = arr[0];
+		for(int i=1 ; i<n ; i++) {
+			dp[i] = Math.max(dp[i-1]+arr[i], arr[i]);
+			
+			max = Math.max(max, dp[i]);
+		}
+		
+		System.out.println(max);
 		
 		/*
+		//옛날 소스(실패)
 		//시간복잡도 이중 for문 == O(n^2)
 		Scanner sc = new Scanner(System.in);
 		
@@ -43,7 +61,7 @@ public class Q1912 {
 		}
 		
 		System.out.println(result);
-		*/
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -56,6 +74,7 @@ public class Q1912 {
 		}
 		
 		Arrays.sort(a);
+		*/
 	}
 	
 
