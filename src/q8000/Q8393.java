@@ -19,9 +19,11 @@ public class Q8393 {
 		
 		n = sc.nextInt();
 		
-		for(int i=1 ; i<=n ; i++) {
-			result += i;
-		}
+//		for(int i=1 ; i<=n ; i++) {
+//			result += i;
+//		}
+		
+		result = n*(n+1) / 2;
 		
 		System.out.println(result);
 	}

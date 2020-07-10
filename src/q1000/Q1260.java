@@ -32,7 +32,7 @@ public class Q1260 {
 			adj[i] = new ArrayList<Integer>();
 		}
 		
-		//양방향 그래프
+		//무방향 그래프
 		for(int i=0 ; i<M ; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
 			int v = Integer.parseInt(st.nextToken());
