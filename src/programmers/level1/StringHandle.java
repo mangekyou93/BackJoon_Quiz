@@ -1,6 +1,6 @@
 package programmers.level1;
 
-public class HandlingString {
+public class StringHandle {
 
 	//level 1
 	//프록래머스 문제 : 문자열 다루기 기본
