@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 public class Q1463 {
 
 	//백준 문제 1463 : 1로 만들기
+	//메모리 : 47MB / 시간 : 3.464 s
 	//분류 : 다이나믹 프로그래밍(DP)
 	
 	//내가 그냥 반복문으로 못 짠 이유
