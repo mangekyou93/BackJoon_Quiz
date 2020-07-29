@@ -19,7 +19,5 @@ public class Q2104 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		
-		
 	}
 }
