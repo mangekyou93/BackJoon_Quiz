@@ -19,7 +19,8 @@ public class Q15649 {
 	//for문 안에 재귀라니
 	//재귀를 사용하면 반드시 끝나는 지점이 있어야된다는 건 알지만, 구현을 아에 못하겠음..
 	static StringBuilder sb = new StringBuilder();
-	static int[] check, list;
+	static int[] arr = new int[10];
+	static boolean[] used = new boolean[10];
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -28,8 +29,6 @@ public class Q15649 {
 		
 		int n = Integer.parseInt(st.nextToken());
 		int m = Integer.parseInt(st.nextToken());
-		check = new int[9];
-		list = new int[9];
 
 		sequence(n, m, 0);
 		
@@ -43,7 +42,7 @@ public class Q15649 {
 						// 개인적인 생각으로는 이부분이 백트래킹에 해당한다고 생각한다.
             // M보다 큰 횟수는 고려하지 않고 배제한다.
 			for(int i=0;i<m;i++) { // 현재 결과배열을 출력
-				sb.append(list[i]+" ");
+				sb.append(arr[i]+" ");
 			}
 			sb.append("\n");
 			return; // DFS 종료 
@@ -52,11 +51,11 @@ public class Q15649 {
 		
 		for(int i=1 ; i<=n ; i++) {
 			
-			if(check[i] == 1) continue;
-			check[i] = 1;
-			list[cnt] = i;					// 현재 반복횟수에 해당하는 배열에 i값을 넣는다.
+			if(used[i]) continue;
+			used[i] = true;
+			arr[cnt] = i;					// 현재 반복횟수에 해당하는 배열에 i값을 넣는다.
 			sequence(n, m, cnt+1);			// 반복횟수를 증가시킨다.
-			check[i] = 0;					// dfs가 종료 후에는 다시 방문여부를 0으로 초기화한다.
+			used[i] = false;				// dfs가 종료 후에는 다시 방문여부를 0으로 초기화한다.
 		}
 		
 	}
